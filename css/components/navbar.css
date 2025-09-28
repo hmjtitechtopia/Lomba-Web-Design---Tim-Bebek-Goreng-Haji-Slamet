@@ -1,0 +1,81 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5vh 8vw;
+    background-color: rgba(61, 63, 107, 1);
+}
+
+.navbar .logo {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #F6F7FF;
+}
+
+.navbar .items {
+    display: flex;
+    gap: 8vw;
+}
+
+.navbar .items a {
+    text-decoration: none;
+    color: #F6F7FF;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+/* Hamburger icon (hidden by default) */
+.navbar .hamburger {
+    display: none;
+    font-size: 2rem;
+    color: #F6F7FF;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.navbar .items {
+    transition: max-height 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 5vh 8vw 2vh 8vw;
+    }
+
+    #register-now {
+        display: none;
+    }
+
+    .navbar .items {
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        /* hidden */
+        overflow: hidden;
+        background-color: rgba(61, 63, 107, 0.95);
+        margin-top: 1em;
+        padding: 0;
+        gap: 1.5em;
+        text-align: center;
+    }
+
+    .navbar .items a {
+        font-size: 1.1rem;
+        display: block;
+        padding: 0.8em 0;
+    }
+
+    .navbar .hamburger {
+        display: block;
+    }
+
+    /* When active (menu open) */
+    .navbar .items.active {
+        max-height: 500px;
+        /* enough space for links */
+        padding: 1em 0;
+    }
+}

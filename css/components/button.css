@@ -1,0 +1,83 @@
+.btn-outline {
+    padding: 0.7rem 1rem;
+    border: 2px solid #F6F7FF;
+    background-color: transparent;
+    color: #F6F7FF;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline:hover {
+    background-color: #F6F7FF;
+    color: #3A3D5D;
+}
+
+.btn-fill-p {
+    padding: 0.8rem 1.2rem;
+    border: none;
+    background-color: #FFD499;
+    color: #3A3D5D;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-fill-p:hover {
+    background-color: #e6b87a;
+    color: #fff;
+}
+
+.btn-fill-purple {
+    padding: 0.8rem 1.2rem;
+    border: none;
+    background-color: #3A3D5D;
+    color: #F6F7FF;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-fill-purple:hover {
+    background-color: #292b41;
+    color: #fff;
+}
+
+.btn-outline,
+.btn-fill-p,
+.btn-fill-purple {
+  display: inline-block; 
+  text-decoration: none; 
+  text-align: center;
+}
+
+/* Tablet (<= 768px) */
+@media (max-width: 768px) {
+  .btn-outline,
+  .btn-fill-p,
+  .btn-fill-purple {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.9rem;
+  }
+}
+
+/* Mobile (<= 480px) */
+@media (max-width: 480px) {
+  .btn-outline,
+  .btn-fill-p,
+  .btn-fill-purple {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+    width: 100%;      /* buttons stretch full width */
+    max-width: 300px; /* but not too wide */
+    margin: 0.4em auto;
+    display: block;
+    text-align: center;
+  }
+}

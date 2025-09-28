@@ -1,0 +1,129 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #f7f2d2;
+    background: linear-gradient(360deg, rgb(221, 221, 217) 0%, rgb(251, 249, 246) 100%);
+    color: #333;
+    line-height: 1.5;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    padding: 2rem 6vw;
+}
+
+.recommendation h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
+    color: #3a3d5d;
+}
+
+.recommendation p {
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.card {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card img {
+    width: 60px;
+    height: 60px;
+}
+
+.card .info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    color: #3a3d5d;
+}
+
+.card .info p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.8rem;
+}
+
+.card .btn-study {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    background: #3a3d5d;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.card .btn-study:hover {
+    background: #292b41;
+}
+
+.card .btn-study:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+.schedule {
+    background: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.schedule h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #3a3d5d;
+}
+
+.event {
+    background: #f6f7ff;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.event .subject {
+    font-weight: 600;
+    color: #3a3d5d;
+}
+
+.event .time {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar .menu {
+        display: none;
+        /* you can replace with a hamburger */
+    }
+}

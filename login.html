@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/defaults.css" />
+    <link rel="stylesheet" href="css/pages/register.css" />
+    <link rel="stylesheet" href="css/components/button.css" />
+    <link rel="stylesheet" href="css/components/navbar.css" />
+    <!-- Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="signup-container">
+      <!-- Left Illustration -->
+      <div class="signup-illustration">
+        <img src="assets/images/girl-glass.png" alt="Ilustrasi Fisika" />
+      </div>
+
+      <!-- Right Form -->
+      <div class="signup-form">
+        <h1>Selamat Datang!</h1>
+        <p>login untuk memulai perjalanan belajarmu!</p>
+        
+        <p class="alt" id="loginMessage"></p>
+
+        <form method="get" id="loginForm">
+          <div class="input-box">
+            <i class="bx bx-user"></i>
+            <input type="text" id="username" placeholder="Username" required />
+          </div>
+
+          <div class="input-box">
+            <i class="bx bx-lock-alt"></i>
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn-submit">Login</button>
+        </form>
+
+        <p class="alt">Atau kamu bisa login menggunakan</p>
+
+        <button class="btn-google">
+          <img
+            src="https://developers.google.com/identity/images/g-logo.png"
+            alt="Google"
+          />
+          <span>Google</span>
+        </button>
+      </div>
+    </section>
+    <script>
+      const loginForm = document.getElementById("loginForm");
+      const loginMessage = document.getElementById("loginMessage");
+
+      loginForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
+        const foundUser = users.find(
+          (user) => user.username === username && user.password === password
+        );
+
+        if (foundUser) {
+          window.location.href = "dashboard.html";
+        } else {
+          loginMessage.textContent = "Username atau password salah!";
+          loginMessage.style.color = "white";
+        }
+
+        loginForm.reset();
+      });
+    </script>
+  </body>
+</html>

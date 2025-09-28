@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Physica! Dashboard</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/defaults.css" />
+    <link rel="stylesheet" href="css/pages/study-viewer.css" />
+    <link rel="stylesheet" href="css/components/button.css" />
+    <link rel="stylesheet" href="css/components/quiz.css" />
+    <link rel="stylesheet" href="css/components/navbar.css" />
+    <!-- Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="quiz-overlay" id="quizOverlay">
+      <div class="quiz-popup">
+        <span class="close-btn" onclick="closeQuiz()">&times;</span>
+        <h2>Quick Quiz</h2>
+        <p>
+          Jika sebuah mobil bergerak dengan kecepatan 10 m/s selama 5 detik,
+          berapa jaraknya?
+        </p>
+        <button onclick="checkAnswer('a')">A. 50 m</button>
+        <button onclick="checkAnswer('b')">B. 5 m</button>
+        <button onclick="checkAnswer('c')">C. 2 m</button>
+        <p id="feedback"></p>
+      </div>
+    </div>
+
+    <header class="navbar">
+      <div class="logo">PHYSICA!</div>
+
+      <button class="hamburger">
+        <i class="bx bx-menu"></i>
+      </button>
+
+      <div class="items">
+        <a href="dashboard.html">Dashboard</a>
+      </div>
+
+      <a href="#" id="register-now" class="btn-outline">Langganan Sekarang</a>
+    </header>
+
+    <section class="lesson-container">
+      <aside class="sidebar">
+        <h2>Kinematika</h2>
+        <ul>
+          <li class="active">Gerak Lurus Beraturan (GLB)</li>
+          <li>Gerak Lurus Berubah Beraturan (GLBB)</li>
+        </ul>
+      </aside>
+
+      <main class="content">
+        <h1>Bab 1 Kinematika</h1>
+        <h3>Sub bab: GLB dan GLBB</h3>
+        <p>
+          Pernahkah kamu melihat kereta cepat yang melaju di rel? Pada papan
+          informasi sering muncul angka seperti “250 km/jam” yang menunjukkan
+          seberapa cepat kereta tersebut bergerak. Dari data itu, kita bisa
+          memahami bahwa kereta sedang mengalami gerak lurus — bisa berupa Gerak
+          Lurus Beraturan (GLB) ataupun Gerak Lurus Berubah Beraturan (GLBB).
+          Lalu, apa sebenarnya perbedaan antara GLB dan GLBB? Mari kita bahas
+          lebih lanjut!
+        </p>
+
+        <!-- <div class="placeholder">[Animasi/Ilustrasi]</div> -->
+
+        <h2>Apa itu GLB dan GLBB?</h2>
+        <p>
+          Gerak adalah perubahan posisi suatu benda dari satu titik ke titik
+          lain. Jika posisinya tidak berubah, maka benda dianggap tidak
+          bergerak. Nah, jika perubahan posisi itu terjadi di lintasan lurus,
+          maka disebut gerak lurus. Gerak lurus sendiri terbagi menjadi dua
+          jenis utama:
+          <b>Gerak Lurus Beraturan (GLB)</b> dan
+          <b>Gerak Lurus Berubah Beraturan (GLBB)</b>.
+        </p>
+
+        <h2>Pengertian dan Grafik GLB</h2>
+        <p>
+          Gerak lurus beraturan (GLB) adalah gerak benda di lintasan lurus
+          dengan kecepatan tetap. Artinya, kecepatan benda tidak berubah dari
+          waktu ke waktu, baik besarnya maupun arahnya. Karena kecepatannya
+          konstan, maka percepatannya sama dengan nol.
+        </p>
+        <p>
+          Grafik GLB (v–t): berupa garis mendatar, menunjukkan kecepatan tetap
+          sepanjang waktu. Dimana area yang berwarna (dibawah garis v)
+          menunjukan jarak yang ditempuh.
+        </p>
+        <div class="chart-container">
+          <canvas id="vtChart" width="400" height="200"></canvas>
+        </div>
+        <h2>Rumus GLB</h2>
+        <div class="formula-container">
+          <div class="formula-box">\( v = \frac{s}{t} \)</div>
+          <div class="formula-box">\( t = \frac{s}{v} \)</div>
+          <div class="formula-box">\( s = v \cdot t \)</div>
+        </div>
+        <p>
+          s: Jarak (meter) <br />
+          v: Kecepatan (meter/sekon) <br />
+          t: Waktu (sekon)
+        </p>
+        <p></p>
+        <h2>Contoh GLB</h2>
+        <p>
+          Dalam GLB, kecepatan benda tetap sepanjang waktu. Misalnya, sebuah
+          bola bergerak dengan kecepatan 5 m/s selama 10 detik. Bola tersebut
+          akan menempuh jarak: yaitu
+        </p>
+        <div class="formula-container">
+          <div class="formula-box" style="font-size: 0.8em">
+            \[ s = v \times t = 5 \,\text{m/s} \times 10 \,\text{s} = 50
+            \,\text{m} \]
+          </div>
+        </div>
+        <br />
+        <div class="track">
+          <div class="ball"></div>
+        </div>
+        <br />
+        <button class="btn-fill-purple" onclick="openQuiz()">Start Quiz</button>
+      </main>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/study-viewer.js"></script>
+    <script src="js/quiz-handler.js"></script>
+    <script src="js/nav-handler.js"></script>
+
+  </body>
+</html>

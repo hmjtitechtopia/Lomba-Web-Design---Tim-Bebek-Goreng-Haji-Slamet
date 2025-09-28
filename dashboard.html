@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Physica! Dashboard</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/defaults.css" />
+    <link rel="stylesheet" href="css/pages/dashboard.css" />
+    <link rel="stylesheet" href="css/components/button.css" />
+    <link rel="stylesheet" href="css/components/navbar.css" />
+    <!-- Others -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">PHYSICA!</div>
+
+      <button class="hamburger">
+        <i class="bx bx-menu"></i>
+      </button>
+
+      <div class="items">
+        <a href="#">Dashboard</a>
+      </div>
+
+      <a href="#" id="register-now" class="btn-outline">Langganan Sekarang</a>
+    </header>
+
+    <section class="dashboard">
+      <div class="recommendation" data-aos="fade-up">
+        <h2>Materi - Materi</h2>
+        <p>Mau belajar materi apa hari ini?</p>
+
+        <div class="card" data-aos="zoom-in" data-aos-delay="100">
+          <img src="assets/images/dashboard/kinematics.jpg" alt="Kinematika" />
+          <div class="info">
+            <h3>Kinematika</h3>
+            <p>Mempelajari konsep dasar gerak, mulai dari GLB dan GLBB, ...</p>
+            <a href="study-viewer.html" class="btn-study">Pelajari!</a>
+          </div>
+        </div>
+
+        <div class="card" data-aos="zoom-in" data-aos-delay="200">
+          <img src="assets/images/dashboard/pendulu.png" alt="Dinamika" />
+          <div class="info">
+            <h3>Dinamika Partikel</h3>
+            <p>Mempelajari gaya beserta ketiga Hukum Newton ...</p>
+            <button disabled class="btn-study">Belum tersedia!</button>
+          </div>
+        </div>
+
+        <div class="card" data-aos="zoom-in" data-aos-delay="300">
+          <img src="assets/images/dashboard/fluid.png" alt="Fluida" />
+          <div class="info">
+            <h3>Fluida</h3>
+            <p>Mempelajari bagaimana fluida bergerak dan berinteraksi ...</p>
+            <button disabled class="btn-study">Belum tersedia!</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="schedule" data-aos="fade-left">
+        <h3>Daily Quest</h3>
+        <div class="event">Kerjakan Quiz</div>
+        <div class="event">Baca dua Sub-bab</div>
+      </div>
+    </section>
+
+    <script src="js/nav-handler.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800, // kecepatan animasi
+        once: true, // animasi hanya jalan sekali
+      });
+    </script>
+  </body>
+</html>

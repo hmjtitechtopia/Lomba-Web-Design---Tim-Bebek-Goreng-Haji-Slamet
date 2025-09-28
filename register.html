@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="css/defaults.css" />
+    <link rel="stylesheet" href="css/pages/register.css" />
+    <link rel="stylesheet" href="css/components/button.css" />
+    <link rel="stylesheet" href="css/components/navbar.css" />
+    <!-- Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="signup-container">
+      <!-- Left Illustration -->
+      <div class="signup-illustration">
+        <img src="assets/images/girl-glass.png" alt="Ilustrasi Fisika" />
+      </div>
+
+      <!-- Right Form -->
+      <div class="signup-form">
+        <h1>Ayo Bergabung!</h1>
+        <p>Silakan isi data di bawah ini untuk melakukan registrasi akun!</p>
+
+        <form action="login.html" method="get" id="registerForm">
+          <div class="input-box">
+            <i class="bx bx-user"></i>
+            <input type="text" id="username" placeholder="Username" required />
+          </div>
+
+          <div class="input-box">
+            <i class="bx bx-envelope"></i>
+            <input type="email" id="email" placeholder="E-mail" required />
+          </div>
+
+          <div class="input-box">
+            <i class="bx bx-phone"></i>
+            <input type="tel" id="phone" placeholder="No. Telepon" required />
+          </div>
+
+          <div class="input-box">
+            <i class="bx bx-lock-alt"></i>
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn-submit">Daftar</button>
+        </form>
+
+        <p class="alt">Atau kamu bisa register menggunakan</p>
+
+        <button class="btn-google">
+          <img
+            src="https://developers.google.com/identity/images/g-logo.png"
+            alt="Google"
+          />
+          <span>Google</span>
+        </button>
+      </div>
+    </section>
+    <script>
+      const form = document.getElementById("registerForm");
+      const output = document.getElementById("output");
+
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+
+      output.textContent = JSON.stringify(users, null, 2);
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const newUser = {
+          username: document.getElementById("username").value,
+          email: document.getElementById("email").value,
+          phone: document.getElementById("phone").value,
+          password: document.getElementById("password").value,
+        };
+
+        users.push(newUser);
+
+        localStorage.setItem("users", JSON.stringify(users));
+
+        output.textContent = JSON.stringify(users, null, 2);
+
+        form.reset();
+      });
+    </script>
+  </body>
+</html>
